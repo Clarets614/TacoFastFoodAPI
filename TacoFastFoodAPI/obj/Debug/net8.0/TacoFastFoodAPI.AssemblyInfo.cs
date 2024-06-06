@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TacoFastFoodAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+807e0508cc5ec94d172deeaf3420d1ecfcccc7db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d1c4ee6c348ae35b3ffe9df839d2eab4d19cbc6")]
 [assembly: System.Reflection.AssemblyProductAttribute("TacoFastFoodAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TacoFastFoodAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

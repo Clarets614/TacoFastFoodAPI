@@ -12,20 +12,20 @@ namespace TacoFastFoodAPI.Controllers
         FastFoodTacoDbContext dbContext = new FastFoodTacoDbContext();
 
         [HttpGet()]
-        public IActionResult GetDrinks([FromBody]string? SortByCost = null)
+        public IActionResult GetDrinks(string? SortByCost = null)
         {
             List<Drink> result = dbContext.Drinks.ToList();
             if(SortByCost != null)
             {
-                if(SortByCost.ToLower() == "descending")
+                if(SortByCost.ToLower() == "ascending")
                 {
-                    return Ok(result.OrderByDescending(d => d.Cost));
+                    result = result.OrderBy(d => d.Cost).ToList();
                 }
-                else
+                else if(SortByCost.ToLower() == "descending")
                 {
-                     if (SortByCost.ToLower() == "ascending")
                     {
-                        return Ok(result.OrderBy((d => d.Cost));
+
+                    result = result.OrderByDescending(d => d.Cost).ToList();
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace TacoFastFoodAPI.Controllers
             }
             if(!dbContext.Drinks.Any(d =>d.Id == id))
             {
-                return NoContent();
+                return NotFound();
             }
             dbContext.Drinks.Update(targetDrink);
             dbContext.SaveChanges();
